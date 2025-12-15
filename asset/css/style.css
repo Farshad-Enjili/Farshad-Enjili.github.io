@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'IRANSans';
+  src: url('../fonts/IRANSans/IRANSansWeb_Medium.woff');
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 'IRANSans';
+  text-align: right;
+  direction: rtl;
+  color: #040E27;
+  font-size: 1rem;
+}
+.pointer{
+  cursor: pointer;
+}
+.gallery-overlay-dark {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border: none;
+  border-radius: .5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+}
