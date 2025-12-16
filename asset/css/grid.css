@@ -523,5 +523,27 @@ iframe {
   border-radius: .5rem;
   zoom:.8;
 }
-
-
+.fixed-bottom-menu {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.bottom-menu-container {
+  background: rgba(0, 0, 0, .8);
+}
+.bottom-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bottom-menu-icon {
+  font-size: 1.2rem;
+  color: #AAB1B7;
+  margin: 1rem 1rem;
+}
+.bottom-menu-icon:hover {
+  color: #fff;
+  transition: all .5s ease;
+}
