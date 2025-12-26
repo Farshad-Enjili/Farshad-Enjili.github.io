@@ -1,16 +1,15 @@
-function socialMedia(element){
-let id=element.id;
-switch(id){
-  case 'facebook-link':
+function socialMedia(element,str){
+switch(str){
+  case 'facebook':
     window.open('https://www.facebook.com/sharer/sharer/','_blank');
     break;
-  case 'twitter-link':
+  case 'twitter':
     window.open('https://www.twitter.com/sharer/sharer/','_blank');
     break;
-  case 'instagram-link':
+  case 'instagram':
     window.open('https://www.instagram.com/sharer/sharer/','_blank');
     break;
-  case 'whatsapp-link':
+  case 'whatsapp':
     window.open('https://www.whatsapp.com/sharer/sharer/','_blank');
     break;
   default:
@@ -91,30 +90,28 @@ document.getElementById('sidebarExtraToggle').addEventListener('click', function
 const formIds = Array();
 const formValues = Array();
 const formErrors =Array();
-const errorNumbers = Array();
 const form=document.getElementById('form');
 for(let i=0; i<form.length-1;i++)
   formIds[i]=form.elements[i].id;
 for(let i=0; i<form.length-1;i++)
   formErrors[i]=formIds[i]+'Error';
-console.log('formErrors: '+formErrors);
-console.log('formIds: '+formIds);
 form.addEventListener('submit', (e)=>{
+  let n=0;
+  let errorNumbers = Array();
+  for(let i=0; i<form.length-1;i++)
+    document.getElementById(formErrors[i]).innerHTML ='';
   for(let i=0; i<form.length-1;i++)
     formValues[i]=form.elements[i].value;
-    console.log('formValues: '+formValues);
-    if(formValues.length!==form.length){
+  for(let i=0; i<form.length-1;i++)
+    if(formValues[i]==='')
+      n+=1;
+    if(n!==0){
+      e.preventDefault();
       for(let i=0; i<form.length-1;i++)
         if(formValues[i]=== '' || formValues[i]== null)
           errorNumbers.push(i);
-      console.log('errorNumbers: '+errorNumbers);
-      if(errorNumbers.length>0){
-        e.preventDefault();
-        for(let i=0; i<errorNumbers.length;i++) {
-          let num=errorNumbers.shift();
-          document.getElementById(formErrors[num]).innerHTML = 'لطفا جای خالی را پر کنید !';
-        }
-      }
+      for(let num of errorNumbers)
+        document.getElementById(formErrors[num]).innerHTML = 'لطفا جای خالی را پر کنید !';
     }
 })
 //                          -------------------- Down Menu ------------------------
@@ -130,3 +127,46 @@ document.getElementById('bottomSearchClose').addEventListener('click', function(
   let toggle=document.getElementById('bottomSearchArea');
   toggle.classList.toggle('d-none');
 });
+//                       ------------------------ Footer ----------------------------
+function footerLink(element,str){
+  switch(str){
+    case 'a':
+      window.open('http://localhost:63342/HTML/school%20(%20F%20)/index.html?_ijt=1rm11t5s4sqs3kr33e7fffpbec&_ij_reload=RELOAD_ON_SAVE','_self');
+      break;
+    case 'b':
+      window.open('http://localhost:63342/HTML/school%20(%20F%20)/asset/pages/description/index.html?_ijt=qht21u4kug533kkvra21kpa767&_ij_reload=RELOAD_ON_SAVE','_blank');
+      break;
+    case 'c':
+      window.open('http://localhost:63342/HTML/school%20(%20F%20)/asset/pages/regitration/index.html?_ijt=64550d3asjd5q3pci47l88k0na&_ij_reload=RELOAD_ON_SAVE','_blank');
+      break;
+    case 'd':
+      window.open('http://localhost:63342/HTML/school%20(%20F%20)/asset/pages/gallery/index.html?_ijt=64550d3asjd5q3pci47l88k0na&_ij_reload=RELOAD_ON_SAVE','_blank');
+      break;
+    case 'e':
+      window.open('http://localhost:63342/HTML/school%20(%20F%20)/asset/pages/news/index.html?_ijt=64550d3asjd5q3pci47l88k0na&_ij_reload=RELOAD_ON_SAVE','_blank');
+      break;
+    case 'f':
+      window.open('http://localhost:63342/HTML/school%20(%20F%20)/index.html?_ijt=1rm11t5s4sqs3kr33e7fffpbec&_ij_reload=RELOAD_ON_SAVE','_self');
+      break;
+    case 'g':
+      window.open('http://localhost:63342/HTML/school%20(%20F%20)/asset/pages/description/index.html?_ijt=qht21u4kug533kkvra21kpa767&_ij_reload=RELOAD_ON_SAVE','_blank');
+      break;
+    case 'h':
+      window.open('http://localhost:63342/HTML/school%20(%20F%20)/asset/pages/regitration/index.html?_ijt=64550d3asjd5q3pci47l88k0na&_ij_reload=RELOAD_ON_SAVE','_blank');
+      break;
+    case 'i':
+      window.open('http://localhost:63342/HTML/school%20(%20F%20)/asset/pages/gallery/index.html?_ijt=64550d3asjd5q3pci47l88k0na&_ij_reload=RELOAD_ON_SAVE','_blank');
+      break;
+    case 'j':
+      window.open('http://localhost:63342/HTML/school%20(%20F%20)/asset/pages/news/index.html?_ijt=64550d3asjd5q3pci47l88k0na&_ij_reload=RELOAD_ON_SAVE','_blank');
+      break;
+    case 'k':
+      window.open('http://localhost:63342/HTML/school%20(%20F%20)/asset/pages/gallery/index.html?_ijt=64550d3asjd5q3pci47l88k0na&_ij_reload=RELOAD_ON_SAVE','_blank');
+      break;
+    case 'l':
+      window.open('http://localhost:63342/HTML/school%20(%20F%20)/asset/pages/news/index.html?_ijt=64550d3asjd5q3pci47l88k0na&_ij_reload=RELOAD_ON_SAVE','_blank');
+      break;
+    default:
+      break;
+  }
+}
