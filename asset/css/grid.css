@@ -125,15 +125,29 @@ position: absolute;
   transition: all .5s ease;
 }
 .navbar-extra-dropDown{
-  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: absolute;
   left: .9rem;
   margin-top: .6rem;
   width: 12rem;
-  background: darkcyan;
+  border:none;
+  border-radius: .5rem;
+}
+.navbar-extra-dropDown-item{
+  background: #040E27;
+  border-radius: .5rem;
+}
+.navbar-extra-dropDown-item:hover{
+  background: #040E27;
+  opacity: .7;
+  transform: scale(1.011);
+  transition: all .5s ease;
+}
+.navbar-extra-dropDown span:first-of-type{
+  border-top: 1px solid #DCDCDC;
 }
 .navbar-extra-dropDown > span{
   color: #AAB1B7;
@@ -188,13 +202,13 @@ position: absolute;
 }
 .main-sidebar-container{
   position: fixed;
-  background: rgba(0, 0, 0, .8);
+  background: #040E27;
+  opacity: .9;
   top: 4rem;
   right: 0;
   width: 16rem;
   height: 100%;
   z-index: 10000;
-  display: none;
 }
 .main-sidebar-wrapper{
   height: calc(100vh - 3.5rem);
@@ -446,7 +460,7 @@ position: absolute;
   background: #FFFFFF;
   color: #040E27;
   font-size: 1rem;
-  padding: .45rem 6.8rem;
+  padding: .45rem 6rem;
   border: none;
   outline: none;
   border-radius: .5rem;
@@ -456,6 +470,13 @@ position: absolute;
   color: #FFFFFF;
   border: 1px solid #FFFFFF;
   transition: all .5s ease;
+}
+.form-error{
+  font-size: .6rem;
+  color: #ff2c2c;
+  line-height: 1rem;
+  text-align: right;
+  margin-right: .5rem;
 }
 .footer{
   background: #040E27;
@@ -528,11 +549,11 @@ iframe {
   bottom: 0;
   right: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 1000000;
 }
 .bottom-menu-container {
   background: #040E27;
-  opacity:.9;
+  opacity: .9;
 }
 .bottom-menu {
   display: flex;
@@ -547,4 +568,34 @@ iframe {
 .bottom-menu-icon:hover {
   color: #fff;
   transition: all .5s ease;
+}
+.mobile-search {
+  position: fixed;
+  bottom: 3.1572rem;
+  right: 0;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  opacity: .9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: .3rem;
+  z-index: 99999;
+}
+.mobile-search i {
+  color: #FFFFFF ;
+  font-size: 1rem;
+}
+.mobile-search label {
+  border: 1px solid #DCDCDC;
+  border-radius: 5rem;
+  padding: .2rem .5rem;
+  background: rgba(0, 0, 0, .3);
+}
+.mobile-search input {
+  color: #FFFFFF;
+  background: none;
+  border: none;
+  outline: none;
+  font-size: .8rem;
 }

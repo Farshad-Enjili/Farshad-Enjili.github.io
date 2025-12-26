@@ -16,19 +16,19 @@
     <section class="top-header ">
       <section class="top-header-container container d-flex justify-content-center justify-content-sm-between align-items-center">
         <section class="top-header-socialMedia d-none d-sm-inline">
-          <span class="ml-1 pointer"><i class="fab fa-facebook-f"></i></span>
-          <span class="ml-1 pointer"><i class="fab fa-twitter"></i></span>
-          <span class="ml-1 pointer"><i class="fab fa-instagram"></i></span>
-          <span class="ml-1 pointer"><i class="fab fa-whatsapp"></i></span>
+          <span id="facebook-link" onclick="socialMedia(this)" class="ml-1 pointer"><i class="fab fa-facebook-f"></i></span>
+          <span id="twitter-link" onclick="socialMedia(this)" class="ml-1 pointer"><i class="fab fa-twitter"></i></span>
+          <span id="instagram-link" onclick="socialMedia(this)" class="ml-1 pointer"><i class="fab fa-instagram"></i></span>
+          <span id="whatsapp-link" onclick="socialMedia(this)" class="ml-1 pointer"><i class="fab fa-whatsapp"></i></span>
         </section>
         <section class="top-header-contact d-flex justify-content-between align-items-center">
-          <span class="pointer">
+          <span id="tel" onclick="contactUs(this,'+989123456789')" class="pointer">
               <span>
                 6789  345 912 98+
               </span>
                 <i class="fas fa-phone"></i>
             </span>
-          <span class="mr-2 pointer">
+          <span id="emailAddress" onclick="contactUs(this,'Email.Address@gmail.com')" class="mr-2 pointer">
               <span>Email-Address@gmail.com</span>
               <i class="fas fa-envelope"></i>
             </span>
@@ -39,30 +39,30 @@
       <section class="navbar-container container ">
       <span>
         <span>
-        <span><i class="fas fa-bars navbar-menu pointer d-inline d-lg-none"></i></span>
+        <span><i id="menuBar" class="fas fa-bars navbar-menu pointer d-inline d-lg-none"></i></span>
       </span>
       <span class="navbar-list d-none d-lg-inline">
-        <a href="#" class="navbar-link text-decoration-none">
+        <a onclick="navbarLink(this,'home')" href="#" class="navbar-link text-decoration-none">
           خانه
         </a>
-        <a href="#" class="navbar-link text-decoration-none">
+        <a onclick="navbarLink(this,'description')" href="#" class="navbar-link text-decoration-none">
           معرفی
         </a>
-        <a href="#" class="navbar-link navbar-link-active text-decoration-none">
+        <a onclick="navbarLink(this,'registration')" href="#" class="navbar-link navbar-link-active text-decoration-none">
           ثبت نام
         </a>
-        <a href="#" class="navbar-link text-decoration-none">
+        <a onclick="navbarLink(this,'gallery')" href="#" class="navbar-link text-decoration-none">
           گالری
         </a>
-        <a href="#" class="navbar-link text-decoration-none">
+        <a onclick="navbarLink(this,'news')" href="#" class="navbar-link text-decoration-none">
           خبرنامه
         </a>
-        <span class=" position-relative">
-          <a href="#" class="navbar-link text-decoration-none">
+        <span class="position-relative">
+          <a id="navbarSectionToggle" href="#" class="navbar-link text-decoration-none">
           مقاطع تحصیلی
           <i class="fas fa-angle-down"></i>
         </a>
-          <span class="navbar-section-dropDown d-none">
+          <span id="navbarSectionDropdown" class="navbar-section-dropDown d-none">
             <span class="pointer navbar-section-dropDown-item">
               متن آزمایشی یک
             </span>
@@ -78,21 +78,21 @@
           </span>
         </span>
         <span class="position-relative">
-          <a href="#" class="navbar-link text-decoration-none">
+          <a id="navbarExtraToggle" href="#" class="navbar-link text-decoration-none">
           فوق برنامه
           <i class="fas fa-angle-down"></i>
         </a>
-          <span class="navbar-section-dropDown d-none">
-            <span class="pointer navbar-section-dropDown-item">
+          <span id="navbarExtraDropdown" class="navbar-extra-dropDown d-none">
+            <span class="pointer navbar-extra-dropDown-item">
               متن آزمایشی یک
             </span>
-            <span class="pointer navbar-section-dropDown-item">
+            <span class="pointer navbar-extra-dropDown-item">
               متن آزمایشی یک
             </span>
-            <span class="pointer navbar-section-dropDown-item">
+            <span class="pointer navbar-extra-dropDown-item">
               متن آزمایشی یک
             </span>
-            <span class="pointer navbar-section-dropDown-item">
+            <span class="pointer navbar-extra-dropDown-item">
               متن آزمایشی یک
             </span>
           </span>
@@ -101,11 +101,11 @@
       </span>
         <span class="d-flex justify-content-between align-items-center ">
         <span class="navbar-search ml-2">
-          <span class="search-icon">
+          <span id="navbarSearchToggle" class="search-icon">
             <i class="fas fa-search pointer"></i>
           </span>
-          <span class="navbar-search-area d-none">
-            <i class="fas fa-close pointer"></i>
+          <span id="navbarSearchArea" class="navbar-search-area d-none">
+            <i id="navbarSearchAreaToggle" class="fas fa-close pointer"></i>
             <label>
               <input type="text" class="navbar-search-input" placeholder="جستجو ...">
             </label>
@@ -126,36 +126,36 @@
 <main class="main">
   <section class="main-container">
     <aside class="main-sidebar d-lg-none">
-      <section class="main-sidebar-container ">
+      <section id="sidebarMenu" class="main-sidebar-container d-none">
         <section class="main-sidebar-wrapper pt-5">
-            <section class="sidebar-link pointer">
-              <i class="fas fa-home pointer"></i>
-              <span>خانه</span>
+          <section class="sidebar-link pointer">
+              <i onclick="navbarLink(this,'home')"  class="fas fa-home pointer"></i>
+              <span onclick="navbarLink(this,'home')" >خانه</span>
 <!--              <i class="fas fa-angle-left angle"></i>-->
             </section>
           <section class="sidebar-link pointer">
 <!--            <i class="fas fa-home pointer"></i>-->
-            <span>معرفی</span>
+            <span onclick="navbarLink(this,'description')" >معرفی</span>
             <!--              <i class="fas fa-angle-left angle"></i>-->
           </section>
           <section class="sidebar-link pointer">
 <!--            <i class="fas fa-home pointer"></i>-->
-            <span>ثبت نام</span>
+            <span onclick="navbarLink(this,'registration')">ثبت نام</span>
             <!--              <i class="fas fa-angle-left angle"></i>-->
           </section>
-          <section class="sidebar-link pointer">
+          <section  class="sidebar-link pointer">
 <!--            <i class="fas fa-home pointer"></i>-->
-            <span>گالری</span>
+            <span onclick="navbarLink(this,'gallery')">گالری</span>
             <!--              <i class="fas fa-angle-left angle"></i>-->
           </section>
           <section class="sidebar-link pointer">
             <!--            <i class="fas fa-home pointer"></i>-->
-            <span>خبرنامه</span>
+            <span onclick="navbarLink(this,'news')">خبرنامه</span>
             <!--              <i class="fas fa-angle-left angle"></i>-->
           </section>
-          <section class="sidebar-group-link">
-            <section class="sidebar-dropdown-toggle">
-              <a href="#" class="sidebar-link text-decoration-none">
+          <section id="sidebarSectionGroupLink" class="sidebar-group-link">
+            <section id="sidebarSectionToggle" class="sidebar-dropdown-toggle">
+              <a  href="#" class="sidebar-link text-decoration-none">
                 مقاطع تحصیلی
                 <i class="fas fa-angle-down pointer"></i>
               </a>
@@ -166,8 +166,8 @@
               <a href="#" class="text-decoration-none">دوره ها</a>
             </section>
           </section>
-          <section class="sidebar-group-link mt-3">
-            <section class="sidebar-dropdown-toggle">
+          <section id="sidebarExtraGroupLink" class="sidebar-group-link mt-3">
+            <section id="sidebarExtraToggle" class="sidebar-dropdown-toggle">
               <a href="#" class="sidebar-link text-decoration-none">
                 فوق برنامه
                 <i class="fas fa-angle-down pointer"></i>
@@ -189,7 +189,7 @@
       <section class="main-row pt-5">
         <section class="main-news">
           <section class="main-news-container d-flex container ">
-            <section class="news-box col-12 col-md-4 p-4  pointer">
+            <section onclick="navbarLink(this,'news')" class="news-box col-12 col-md-4 p-4  pointer">
               <h5 class="news-title">
                 خبرهای هفتگی
               </h5>
@@ -200,7 +200,7 @@
                 ادامه مطلب ...
               </span>
             </section>
-            <section class="news-box col-12 col-md-4 p-4  pointer">
+            <section onclick="navbarLink(this,'news')" class="news-box col-12 col-md-4 p-4  pointer">
               <h5 class="news-title">
                 خبرهای هفتگی
               </h5>
@@ -211,7 +211,7 @@
                 ادامه مطلب ...
               </span>
             </section>
-            <section class="news-box col-12 col-md-4 p-4  pointer">
+            <section onclick="navbarLink(this,'news')" class="news-box col-12 col-md-4 p-4  pointer">
               <h5 class="news-title">
                 خبرهای هفتگی
               </h5>
@@ -253,22 +253,22 @@
       <section class="main-row mt-5">
         <section class="main-gallery  container">
           <section class="main-gallery-container">
-            <span class="gallery-item1 bg-img1 gallery-item-hover position-relative pointer">
+            <span onclick="navbarLink(this,'gallery')" class="gallery-item1 bg-img1 gallery-item-hover position-relative pointer">
               <span class="gallery-overlay-dark"></span>
             </span>
-            <span class="gallery-item2 bg-img2 gallery-item-hover position-relative pointer">
+            <span onclick="navbarLink(this,'gallery')" class="gallery-item2 bg-img2 gallery-item-hover position-relative pointer">
               <span class="gallery-overlay-dark"></span>
             </span>
-            <span class="gallery-item3 bg-img3 gallery-item-hover position-relative pointer">
+            <span onclick="navbarLink(this,'gallery')" class="gallery-item3 bg-img3 gallery-item-hover position-relative pointer">
               <span class="gallery-overlay-dark"></span>
             </span>
-            <span class="gallery-item4 bg-img4 gallery-item-hover position-relative pointer">
+            <span onclick="navbarLink(this,'gallery')" class="gallery-item4 bg-img4 gallery-item-hover position-relative pointer">
               <span class="gallery-overlay-dark"></span>
             </span>
-            <span class="gallery-item5 bg-img5 gallery-item-hover position-relative pointer">
+            <span onclick="navbarLink(this,'gallery')" class="gallery-item5 bg-img5 gallery-item-hover position-relative pointer">
               <span class="gallery-overlay-dark"></span>
             </span>
-            <span class="gallery-item6 bg-img6 gallery-item-hover position-relative pointer">
+            <span onclick="navbarLink(this,'gallery')" class="gallery-item6 bg-img6 gallery-item-hover position-relative pointer">
               <span class="gallery-overlay-dark"></span>
             </span>
           </section>
@@ -316,27 +316,31 @@
                     <i class="far fa-edit pointer"></i>
                     ارتباط با ما
                   </h5>
-                  <form action="#" class="form">
-                    <label class="form-label pointer mb-3">
-                      <input class="form-input" type="text" placeholder="نام و نام خانوادگی">
+                  <form id="form" name="contactForm" method="post" action="#" class="form">
+                    <label class="form-label pointer ">
+                      <input id="name" class="form-input" type="text" placeholder="نام و نام خانوادگی">
                       <i class="fas fa-user-tie form-icon"></i>
                     </label>
-                    <label class="form-label pointer mb-3">
-                      <input class="form-input" type="number" placeholder="شماره همراه">
+                    <span id="nameError" class="form-error mb-3"></span>
+                    <label class="form-label pointer">
+                      <input id="phone" class="form-input" type="number" placeholder="شماره همراه">
                       <i class="fas fa-phone form-icon"></i>
                     </label>
-                    <label class="form-label pointer mb-3">
-                      <input class="form-input" type="text" placeholder="ادرس ایمیل">
+                    <span id="phoneError" class="form-error mb-3"></span>
+                    <label class="form-label pointer">
+                      <input id="email" class="form-input" type="text" placeholder="ادرس ایمیل">
                       <i class="fas fa-envelope form-icon"></i>
                     </label>
-                    <label class="form-label pointer mb-3">
-                      <input class="form-input" type="text" placeholder="مقطع تحصیلی">
+                    <span id="emailError" class="form-error mb-3"></span>
+                    <label class="form-label pointer">
+                      <input id="section" class="form-input" type="text" placeholder="مقطع تحصیلی">
                       <i class="fas fa-chalkboard form-icon"></i>
                     </label>
+                    <span id="sectionError" class="form-error mb-3"></span>
+                    <button type="submit" class="form-btn mb-3 mt-2 pointer">
+                      ارسال
+                    </button>
                   </form>
-                  <button class="form-btn mb-3 mt-2 pointer">
-                    ارسال
-                  </button>
                 </section>
             </section>
              </section>
@@ -447,19 +451,20 @@
   </section>
 </footer>
 <section class="fixed-bottom-menu d-md-none">
+  <section class="underline"></section>
   <section class="bottom-menu-container">
     <section class="bottom-menu container">
-      <span>
+      <span id="bottomMenu">
         <i class="fas fa-bars bottom-menu-icon pointer"></i>
       </span>
       <span>
         <i class="fas fa-envelope bottom-menu-icon pointer"></i>
       </span>
       <span>
-        <i class="fas fa-home-alt bottom-menu-icon pointer"></i>
+        <i onclick="navbarLink(this,'home')" class="fas fa-home-alt bottom-menu-icon pointer"></i>
       </span>
       <span>
-        <i class="fas fa-search bottom-menu-icon pointer"></i>
+        <i id="bottomSearch" class="fas fa-search bottom-menu-icon pointer"></i>
       </span>
       <span>
         <i class="fas fa-user bottom-menu-icon pointer"></i>
@@ -467,12 +472,12 @@
     </section>
   </section>
 </section>
-<section class="fixed-mobile-search d-md-none  d-none">
+<section id="bottomSearchArea" class="fixed-mobile-search d-md-none  d-none">
   <section class="mobile-search-container">
     <section>
       <span class="mobile-search">
         <label >
-          <i class="fas fa-close pointer"></i>
+          <i id="bottomSearchClose" class="fas fa-close pointer"></i>
           <input type="text" placeholder="جستجو ..." class="pointer">
           <i class="fas fa-search pointer"></i>
         </label>
